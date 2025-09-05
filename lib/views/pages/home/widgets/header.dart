@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:smartpal/views/pages/home/widgets/search_input.dart';
 
-class HomeHeader extends StatelessWidget {
+class HomeHeader extends StatefulWidget {
   const HomeHeader({super.key});
 
+  @override
+  State<HomeHeader> createState() => _HomeHeaderState();
+}
+
+class _HomeHeaderState extends State<HomeHeader> {
+  TextEditingController searchValue = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsetsGeometry.symmetric(vertical: 10),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: 'Search',
-              prefixIcon: Icon(Icons.search),
-              filled: true,
-              fillColor: Colors.blue[50],
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(75),
-              ),
-            ),
-          ),
+        Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+        SearchInputWidget(
+          searchLabel: "Search...",
+          searchController: searchValue,
         ),
-        SizedBox(height: 15),
+        SizedBox(height: 20),
         Text(
-          'Hi, Harry',
+          'Hi Harry! 🙌',
           style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
         ),
         Text(

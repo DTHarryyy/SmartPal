@@ -52,6 +52,7 @@ class _WidgetTreeState extends State<WidgetTree> {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
+      // appBar: CustomAppBar(height: 50),
     );
   }
 }

@@ -19,7 +19,7 @@ class HomeWidgetsTree extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: Column(children: [HomeHeader(), CoreFeaturesLink()]),
         ),
       ),
