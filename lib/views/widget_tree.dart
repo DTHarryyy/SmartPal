@@ -49,7 +49,10 @@ class _WidgetTreeState extends State<WidgetTree> {
             icon: Icon(Icons.calendar_today),
             label: 'Planner',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_rounded),
+            label: 'Profile',
+          ),
         ],
       ),
       // appBar: CustomAppBar(height: 50),

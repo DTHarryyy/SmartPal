@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 
 class TopicRoomNavigator extends StatelessWidget {
-  final IconData? navigatorIcon;
-  final String? navigatorHeader;
-  final String? navigatorDescription;
+  final IconData navigatorIcon;
+  final String navigatorHeader;
+  final String navigatorDescription;
   final Color? bgColor;
+  final Widget pageRoute;
   // final Icon? navigatorLink;
   const TopicRoomNavigator({
     super.key,
-    this.navigatorIcon,
-    this.navigatorDescription,
-    this.navigatorHeader,
+    required this.navigatorIcon,
+    required this.navigatorDescription,
+    required this.navigatorHeader,
     this.bgColor,
-    // this.navigatorLink,
+    required this.pageRoute,
   });
 
   @override
@@ -62,6 +63,12 @@ class TopicRoomNavigator extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => pageRoute),
+                );
+              },
               child: Container(
                 padding: EdgeInsets.all(2),
                 decoration: BoxDecoration(

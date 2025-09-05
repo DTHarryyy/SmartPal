@@ -6,6 +6,7 @@ class FeaturesNavigator extends StatelessWidget {
   final String? navigatorHeader;
   final String? navigatorDescription;
   final Color? bgColor;
+  final Widget? pageRoute;
   // final Icon? navigatorLink;
   const FeaturesNavigator({
     super.key,
@@ -14,6 +15,7 @@ class FeaturesNavigator extends StatelessWidget {
     this.navigatorDescription,
     this.navigatorHeader,
     this.bgColor,
+    required this.pageRoute,
     // this.navigatorLink,
   });
 
@@ -70,6 +72,12 @@ class FeaturesNavigator extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => pageRoute!),
+                  );
+                },
                 child: Container(
                   padding: EdgeInsets.all(2),
                   decoration: BoxDecoration(

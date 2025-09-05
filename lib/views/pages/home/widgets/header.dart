@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smartpal/views/pages/home/widgets/search_input.dart';
+import 'package:smartpal/views/pages/home/widgets/sub%20widgets/search_input.dart';
 
 class HomeHeader extends StatefulWidget {
   const HomeHeader({super.key});

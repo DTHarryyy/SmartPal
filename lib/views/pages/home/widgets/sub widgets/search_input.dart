@@ -14,7 +14,7 @@ class SearchInputWidget extends StatelessWidget {
         color: Colors.blue[50],
         borderRadius: BorderRadius.circular(100),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Row(
         children: [
           Icon(Icons.search_rounded, color: Colors.black45),
