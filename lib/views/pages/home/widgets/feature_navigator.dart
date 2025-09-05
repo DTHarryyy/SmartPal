@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smartpal/views/pages/home/widgets/sub%20widgets/feature_navigator.dart';
+import 'package:smartpal/views/pages/home/widgets/sub%20widgets/card_for_feature_navigator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:smartpal/views/pages/home/widgets/sub%20widgets/topic_room_navigator.dart';
 

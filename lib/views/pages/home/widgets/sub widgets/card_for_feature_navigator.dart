@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FeaturesNavigator extends StatelessWidget {
   final IconData? navigatorIcon;
@@ -21,15 +20,16 @@ class FeaturesNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
+      flex: 1,
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-        height: 200,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: bgColor,
         ),
 
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

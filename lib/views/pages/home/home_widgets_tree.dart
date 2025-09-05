@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smartpal/views/pages/home/widgets/core_features_link.dart';
+import 'package:smartpal/views/pages/home/widgets/feature_navigator.dart';
 import 'package:smartpal/views/pages/home/widgets/header.dart';
+import 'package:smartpal/views/pages/home/widgets/recent_topics.dart';
 
 class HomeWidgetsTree extends StatelessWidget {
   const HomeWidgetsTree({super.key});
@@ -20,7 +21,9 @@ class HomeWidgetsTree extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          child: Column(children: [HomeHeader(), CoreFeaturesLink()]),
+          child: Column(
+            children: [HomeHeader(), CoreFeaturesLink(), RecentTopics()],
+          ),
         ),
       ),
     );
