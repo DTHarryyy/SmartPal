@@ -51,7 +51,7 @@ class _WidgetTreeState extends State<WidgetTree> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_rounded),
-            label: 'Profile',
+            label: 'Menu',
           ),
         ],
       ),
