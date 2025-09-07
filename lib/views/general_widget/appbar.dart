@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -13,12 +14,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Icon(Icons.edit, color: Colors.white),
       ),
 
-      title: Text('SmartPal'),
+      title: Text(
+        'SmartPal',
+        style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+      ),
 
       actions: [
         GestureDetector(onTap: () {}, child: Icon(Icons.notifications)),
       ],
       actionsPadding: EdgeInsets.symmetric(horizontal: 10),
+      centerTitle: true,
     );
   }
 

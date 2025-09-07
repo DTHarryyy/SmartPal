@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smartpal/views/pages/home/widgets/sub%20widgets/search_input.dart';
 
 class HomeHeader extends StatefulWidget {
@@ -23,11 +24,11 @@ class _HomeHeaderState extends State<HomeHeader> {
         SizedBox(height: 20),
         Text(
           'Hi Harry! 🙌',
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
+          style: GoogleFonts.raleway(fontWeight: FontWeight.w600, fontSize: 24),
         ),
         Text(
           'Ready to boost your learning today?',
-          style: TextStyle(fontSize: 14),
+          style: GoogleFonts.outfit(fontSize: 14),
         ),
       ],
     );

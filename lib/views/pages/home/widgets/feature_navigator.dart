@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smartpal/views/core%20feature/create_topic_room/create_topic_room.dart';
-import 'package:smartpal/views/core%20feature/smart_review/smart_review.dart';
+import 'package:smartpal/views/core%20feature/smart_review/smart_review_widget_tree.dart';
 import 'package:smartpal/views/core%20feature/study_group/study_group.dart';
 import 'package:smartpal/views/pages/home/widgets/sub%20widgets/card_for_feature_navigator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

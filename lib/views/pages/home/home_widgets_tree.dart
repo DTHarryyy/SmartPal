@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartpal/views/general_widget/appbar.dart';
 import 'package:smartpal/views/pages/home/widgets/feature_navigator.dart';
 import 'package:smartpal/views/pages/home/widgets/header.dart';
 import 'package:smartpal/views/pages/home/widgets/recent_topics.dart';
@@ -9,14 +10,7 @@ class HomeWidgetsTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('SmartPal', style: TextStyle(fontWeight: FontWeight.w600)),
-
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
-        ],
-      ),
+      appBar: CustomAppBar(height: 40),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
