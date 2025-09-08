@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smartpal/views/general_widget/appbar.dart';
-import 'package:smartpal/views/pages/home/widgets/feature_navigator.dart';
-import 'package:smartpal/views/pages/home/widgets/header.dart';
-import 'package:smartpal/views/pages/home/widgets/recent_topics.dart';
+import 'package:smartpal/features/general_widget/appbar.dart';
+import 'package:smartpal/features/pages/home/widgets/feature_navigator.dart';
+import 'package:smartpal/features/pages/home/widgets/header.dart';
+import 'package:smartpal/features/pages/home/widgets/recent_topics.dart';
 
 class HomeWidgetsTree extends StatelessWidget {
   const HomeWidgetsTree({super.key});

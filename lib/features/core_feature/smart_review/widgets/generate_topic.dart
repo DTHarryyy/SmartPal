@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smartpal/views/core%20feature/smart_review/widgets/review_page.dart';
+import 'package:smartpal/features/core_feature/smart_review/widgets/review_page.dart';
 
 class GenerateTopic extends StatelessWidget {
   const GenerateTopic({super.key});

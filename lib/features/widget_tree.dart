@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smartpal/views/pages/explore/explore_widgets_tree.dart';
-import 'package:smartpal/views/pages/home/home_widgets_tree.dart';
-import 'package:smartpal/views/pages/planner/planner_widgets_tree.dart';
-import 'package:smartpal/views/pages/profile/profile_widgets_tree.dart';
+import 'package:smartpal/features/pages/explore/explore_widgets_tree.dart';
+import 'package:smartpal/features/pages/home/home_widgets_tree.dart';
+import 'package:smartpal/features/pages/planner/planner_widgets_tree.dart';
+import 'package:smartpal/features/pages/profile/profile_widgets_tree.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
