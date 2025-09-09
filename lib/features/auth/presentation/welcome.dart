@@ -3,7 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smartpal/features/auth/presentation/login.dart';
 import 'package:smartpal/features/auth/presentation/register.dart';
-import 'package:smartpal/features/auth/presentation/widgets/custom_elevated_button.dart';
+import 'package:smartpal/features/auth/presentation/widgets/custom_button.dart';
+import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -21,7 +22,7 @@ class Welcome extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 10),
               child: Lottie.asset('./assets/lotties/Book loading.json'),
             ),
-
+            CustomHeaderText(headerText: 'We are what we do'),
             Text(
               'Thousand of people are using Smartpal for studying',
               style: GoogleFonts.outfit(color: Colors.black45, fontSize: 14),
