@@ -5,6 +5,7 @@ import 'package:smartpal/features/auth/presentation/login.dart';
 import 'package:smartpal/features/auth/presentation/register.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_button.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.dart';
+import 'package:smartpal/features/auth/presentation/widgets/textLink.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -28,31 +29,7 @@ class Welcome extends StatelessWidget {
               style: GoogleFonts.outfit(color: Colors.black45, fontSize: 14),
             ),
             CustomElevatedbutton(btnLabel: 'SIGN UP', widgetRoute: Register()),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'ALREADY HAVE AN ACCOUNT',
-                  style: GoogleFonts.outfit(
-                    color: Colors.black45,
-                    fontSize: 14,
-                  ),
-                ),
-                SizedBox(width: 10),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Login()),
-                    );
-                  },
-                  child: Text(
-                    'LOG IN',
-                    style: GoogleFonts.outfit(color: Colors.blue),
-                  ),
-                ),
-              ],
-            ),
+            Textlink(widgetRoute: Login(), linkLabel: 'Sign in here'),
           ],
         ),
       ),

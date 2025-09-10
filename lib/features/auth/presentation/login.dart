@@ -1,10 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:smartpal/features/auth/presentation/register.dart';
+import 'package:smartpal/features/auth/presentation/widgets/custom_button.dart';
+import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.dart';
+import 'package:smartpal/features/auth/presentation/widgets/input_field.dart';
+import 'package:smartpal/features/auth/presentation/widgets/textLink.dart';
+import 'package:smartpal/features/pages/home/home_widgets_tree.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
+        child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomHeaderText(headerText: 'Create your account'),
+                InputField(
+                  inputController: emailController,
+                  hintText: 'Email',
+                  iconData: Icons.email_rounded,
+                ),
+                InputField(
+                  inputController: passwordController,
+                  hintText: 'Password',
+                  iconData: Icons.remove_red_eye_rounded,
+                ),
+                CustomElevatedbutton(
+                  btnLabel: "LOG IN",
+                  widgetRoute: HomeWidgetsTree(),
+                ),
+                Textlink(widgetRoute: Register(), linkLabel: 'Sign up here'),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

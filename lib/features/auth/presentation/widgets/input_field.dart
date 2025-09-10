@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class InputField extends StatelessWidget {
   final TextEditingController inputController;
   final String hintText;
+  final IconData iconData;
   const InputField({
     super.key,
     required this.inputController,
     required this.hintText,
+    required this.iconData,
   });
 
   @override
@@ -18,13 +20,21 @@ class InputField extends StatelessWidget {
         border: Border.all(width: 1, color: Colors.black12),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: TextField(
-        controller: inputController,
+      child: Row(
+        children: [
+          Icon(iconData, color: Colors.black26),
+          SizedBox(width: 10),
+          Expanded(
+            child: TextField(
+              controller: inputController,
 
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hint: Text(hintText),
-        ),
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hint: Text(hintText),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
