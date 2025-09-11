@@ -3,7 +3,7 @@ import 'package:smartpal/features/auth/presentation/register.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_button.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.dart';
 import 'package:smartpal/features/auth/presentation/widgets/input_field.dart';
-import 'package:smartpal/features/auth/presentation/widgets/textLink.dart';
+import 'package:smartpal/features/auth/presentation/widgets/text_link.dart';
 import 'package:smartpal/features/pages/home/home_widgets_tree.dart';
 
 class Login extends StatefulWidget {
@@ -30,7 +30,7 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                CustomHeaderText(headerText: 'Create your account'),
+                CustomHeaderText(headerText: 'Welcome Back!'),
                 InputField(
                   inputController: emailController,
                   hintText: 'Email',
@@ -42,7 +42,7 @@ class _LoginState extends State<Login> {
                   iconData: Icons.remove_red_eye_rounded,
                 ),
                 CustomElevatedbutton(
-                  btnLabel: "LOG IN",
+                  btnLabel: "SIGN IN",
                   widgetRoute: HomeWidgetsTree(),
                 ),
                 Textlink(widgetRoute: Register(), linkLabel: 'Sign up here'),

@@ -5,7 +5,7 @@ import 'package:smartpal/features/auth/presentation/login.dart';
 import 'package:smartpal/features/auth/presentation/register.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_button.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.dart';
-import 'package:smartpal/features/auth/presentation/widgets/textLink.dart';
+import 'package:smartpal/features/auth/presentation/widgets/text_link.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});

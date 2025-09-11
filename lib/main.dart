@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:smartpal/features/auth/presentation/welcome.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const SmartPal());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SmartPal extends StatelessWidget {
+  const SmartPal({super.key});
 
   @override
   Widget build(BuildContext context) {

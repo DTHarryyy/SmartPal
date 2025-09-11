@@ -12,7 +12,6 @@ class HomeWidgetsTree extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(height: 40),
       body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: Column(
