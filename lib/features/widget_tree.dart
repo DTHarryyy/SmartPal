@@ -4,14 +4,14 @@ import 'package:smartpal/features/pages/home/home_widgets_tree.dart';
 import 'package:smartpal/features/pages/planner/planner_widgets_tree.dart';
 import 'package:smartpal/features/pages/profile/profile_widgets_tree.dart';
 
-class WidgetTree extends StatefulWidget {
-  const WidgetTree({super.key});
+class MainWidgetsTree extends StatefulWidget {
+  const MainWidgetsTree({super.key});
 
   @override
-  State<WidgetTree> createState() => _WidgetTreeState();
+  State<MainWidgetsTree> createState() => _WidgetTreeState();
 }
 
-class _WidgetTreeState extends State<WidgetTree> {
+class _WidgetTreeState extends State<MainWidgetsTree> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [

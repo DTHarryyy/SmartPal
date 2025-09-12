@@ -5,6 +5,7 @@ import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.d
 import 'package:smartpal/features/auth/presentation/widgets/input_field.dart';
 import 'package:smartpal/features/auth/presentation/widgets/text_link.dart';
 import 'package:smartpal/features/pages/home/home_widgets_tree.dart';
+import 'package:smartpal/features/widget_tree.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -49,7 +50,7 @@ class _RegisterState extends State<Register> {
                 ),
                 CustomElevatedbutton(
                   btnLabel: "SIGN UP",
-                  widgetRoute: HomeWidgetsTree(),
+                  widgetRoute: MainWidgetsTree(),
                 ),
                 Textlink(widgetRoute: Login(), linkLabel: 'Sign in here'),
               ],
