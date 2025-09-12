@@ -4,7 +4,6 @@ import 'package:smartpal/features/auth/presentation/widgets/custom_button.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.dart';
 import 'package:smartpal/features/auth/presentation/widgets/input_field.dart';
 import 'package:smartpal/features/auth/presentation/widgets/text_link.dart';
-import 'package:smartpal/features/pages/home/home_widgets_tree.dart';
 import 'package:smartpal/features/widget_tree.dart';
 
 class Register extends StatefulWidget {
