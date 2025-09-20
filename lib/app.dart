@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smartpal/core/constant/app_strings.dart';
-import 'package:smartpal/features/home/presentation/home_widgets_tree.dart';
+import 'package:smartpal/features/auth/presentation/pages/welcome_page.dart';
 
 class SmartPal extends StatelessWidget {
   const SmartPal({super.key});
@@ -10,8 +10,8 @@ class SmartPal extends StatelessWidget {
     return MaterialApp(
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
-
-      home: HomeWidgetsTree(),
+      theme: ThemeData.light(),
+      home: WelcomePage(),
     );
   }
 }
