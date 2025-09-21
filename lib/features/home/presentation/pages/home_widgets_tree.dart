@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smartpal/core/widgets/appbar.dart';
-import 'package:smartpal/features/home/feature_navigator.dart';
-import 'package:smartpal/features/home/header.dart';
+import 'package:smartpal/features/home/presentation/pages/feature_navigator.dart';
+import 'package:smartpal/features/home/presentation/pages/header.dart';
 
 class HomeWidgetsTree extends StatelessWidget {
   const HomeWidgetsTree({super.key});
@@ -9,7 +9,7 @@ class HomeWidgetsTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(height: 40),
+      appBar: CustomAppBar(height: 50),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),

@@ -8,27 +8,30 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      toolbarHeight: height,
-      backgroundColor: Colors.transparent,
-      leading: CircleAvatar(
-        backgroundColor: AppColor.primary,
-        child: Icon(Icons.edit, color: Colors.white),
-      ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: AppBar(
+        toolbarHeight: height,
+        backgroundColor: Colors.transparent,
+        leading: CircleAvatar(
+          backgroundColor: AppColor.primary,
+          child: Icon(Icons.edit, color: Colors.white),
+        ),
 
-      title: CustomTextWidget(
-        textValue: 'SmartPal',
-        size: 20,
-        colorValue: Colors.black87,
-        fontWeight: FontWeight.w600,
-        isDarkModeColor: Colors.white,
-      ),
+        title: CustomTextWidget(
+          textValue: 'SmartPal',
+          size: 20,
+          colorValue: Colors.black87,
+          fontWeight: FontWeight.w600,
+          isDarkModeColor: Colors.white,
+        ),
 
-      actions: [
-        GestureDetector(onTap: () {}, child: Icon(Icons.notifications)),
-      ],
-      actionsPadding: EdgeInsets.symmetric(horizontal: 10),
-      centerTitle: true,
+        actions: [
+          GestureDetector(onTap: () {}, child: Icon(Icons.notifications)),
+        ],
+        actionsPadding: EdgeInsets.symmetric(horizontal: 10),
+        centerTitle: true,
+      ),
     );
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smartpal/core/constant/app_strings.dart';
-import 'package:smartpal/features/auth/presentation/pages/welcome_page.dart';
+import 'package:smartpal/widgets_tree.dart';
 
 class SmartPal extends StatelessWidget {
   const SmartPal({super.key});
@@ -11,7 +11,7 @@ class SmartPal extends StatelessWidget {
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: WelcomePage(),
+      home: WidgetsTree(),
     );
   }
 }

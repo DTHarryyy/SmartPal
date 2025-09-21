@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smartpal/core/constant/app_radius.dart';
 import 'package:smartpal/core/widgets/custom_text_widget.dart';
 
 class FeaturesNavigator extends StatelessWidget {
@@ -24,6 +25,7 @@ class FeaturesNavigator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
+
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
         decoration: BoxDecoration(
@@ -80,7 +82,7 @@ class FeaturesNavigator extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.white.withValues(alpha: 0.19),
                     border: Border.all(width: 1, color: Colors.white12),
-                    borderRadius: BorderRadius.circular(100),
+                    borderRadius: AppRadius.circle,
                   ),
                   child: Icon(
                     Icons.keyboard_arrow_right,
