@@ -4,9 +4,35 @@ import 'package:smartpal/features/auth/presentation/pages/register.dart';
 import 'package:smartpal/features/auth/presentation/widgets/custom_header_text.dart';
 import 'package:smartpal/features/auth/presentation/widgets/input_field.dart';
 import 'package:smartpal/features/auth/presentation/widgets/text_link.dart';
+import 'package:smartpal/features/auth/repository/auth_repository.dart';
+import 'package:smartpal/widgets_tree.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+  String errorMessage = "";
+
+  void handleLogin(email, password) async {
+    if (email.text.trim().isEmpty || password.text.trim().isEmpty) {
+      setState(() {
+        errorMessage = "All fields are required";
+      });
+      return;
+    }
+
+    await AuthRepository().signIn(email.text, password.text);
+
+    if (!mounted) return;
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => WidgetsTree()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +61,10 @@ class Login extends StatelessWidget {
                   hintText: 'Password',
                   iconData: Icons.remove_red_eye_rounded,
                 ),
-                CustomButton(btnLabel: "Sign In", onPressed: () {}),
+                CustomButton(
+                  btnLabel: "Sign In",
+                  onPressed: () => handleLogin(email, password),
+                ),
                 Textlink(widgetRoute: Register(), linkLabel: 'Sign up here'),
               ],
             ),

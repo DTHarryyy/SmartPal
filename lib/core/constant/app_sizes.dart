@@ -10,6 +10,7 @@ class AppSizes {
   static const double fontSmall = 12.0;
   static const double fontMedium = 16.0;
   static const double fontLarge = 20.0;
+  static const double fontXLarge = 24.0;
 
   //device size
   static double screenHeight(BuildContext context) =>

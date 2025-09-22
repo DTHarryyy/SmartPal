@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smartpal/features/home/presentation/pages/home_widgets_tree.dart';
+import 'package:smartpal/profile_widgets_tree.dart';
 
 class WidgetsTree extends StatefulWidget {
   const WidgetsTree({super.key});
@@ -14,7 +15,7 @@ class _WidgetsTreeState extends State<WidgetsTree> {
     HomeWidgetsTree(),
     HomeWidgetsTree(),
     HomeWidgetsTree(),
-    HomeWidgetsTree(),
+    ProfileWidgetsTree(),
   ];
   void _onItemTapped(int index) {
     setState(() {

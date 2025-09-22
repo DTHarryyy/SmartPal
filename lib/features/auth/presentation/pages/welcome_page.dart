@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smartpal/core/constant/app_color.dart';
 import 'package:smartpal/core/constant/app_sizes.dart';
 import 'package:smartpal/core/widgets/custom_button.dart';
+import 'package:smartpal/core/widgets/custom_text_widget.dart';
 import 'package:smartpal/features/auth/presentation/pages/login.dart';
 import 'package:smartpal/features/auth/presentation/pages/register.dart';
 import 'package:smartpal/features/auth/presentation/widgets/text_link.dart';
@@ -28,13 +28,18 @@ class WelcomePage extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 10),
                 child: Lottie.asset('./assets/lotties/Book loading.json'),
               ),
-              Text('We are what we do'),
-              Text(
-                'Thousand of people are using Smartpal for studying',
-                style: GoogleFonts.outfit(
-                  color: AppColor.blackText,
-                  fontSize: AppSizes.fontMedium,
-                ),
+              CustomTextWidget(
+                textValue: 'We are what we do',
+                size: AppSizes.fontXLarge,
+                colorValue: AppColor.blackText,
+                fontWeight: FontWeight.w600,
+              ),
+              CustomTextWidget(
+                textValue: 'Thousand of people are using Smartpal for studying',
+                size: AppSizes.fontMedium,
+                colorValue: AppColor.paragraphText,
+                fontWeight: FontWeight.w400,
+                textAlign: TextAlign.center,
               ),
               CustomButton(
                 btnLabel: 'SIGN UP',
