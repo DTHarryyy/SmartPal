@@ -19,8 +19,15 @@ class UserInformation extends ConsumerStatefulWidget {
 }
 
 class _UserInformationState extends ConsumerState<UserInformation> {
-  final TextEditingController name = TextEditingController();
-  TextEditingController age = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _ageController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _ageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +41,7 @@ class _UserInformationState extends ConsumerState<UserInformation> {
     String uid = userId.toString();
     if (userEmail == null) return Login();
     String email = userEmail.toString();
+
     //handle storing user information in firestore
     void storeUserInformation({
       required String uid,
@@ -44,13 +52,26 @@ class _UserInformationState extends ConsumerState<UserInformation> {
       final user = UserModel(uid: uid, name: name, age: age, email: email);
       await userInfo.addUserInformation(user);
 
-      Navigator.push(
+      if (!context.mounted) return;
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => WidgetsTree()),
       );
     }
 
-    // get user id
+    void validateAndSubmit() {
+      final name = _nameController.text.trim();
+      final age = _ageController.text.trim();
+
+      if (name.isEmpty || age.isEmpty) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text("All fields are required")));
+        return;
+      }
+
+      storeUserInformation(uid: uid, name: name, age: age, email: email);
+    }
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -71,23 +92,18 @@ class _UserInformationState extends ConsumerState<UserInformation> {
                   fontWeight: FontWeight.w600,
                 ),
                 InputField(
-                  inputController: name,
+                  inputController: _nameController,
                   hintText: 'Username',
                   iconData: Icons.person_rounded,
                 ),
                 InputField(
-                  inputController: age,
+                  inputController: _ageController,
                   hintText: 'Age',
                   iconData: Icons.numbers,
                 ),
                 CustomButton(
                   btnLabel: 'SIGN UP',
-                  onPressed: () => storeUserInformation(
-                    uid: uid,
-                    name: name.text,
-                    age: age.text,
-                    email: email,
-                  ),
+                  onPressed: () => validateAndSubmit(),
                 ),
               ],
             ),
