@@ -1,0 +1,115 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:smartpal/core/constant/app_color.dart';
+import 'package:smartpal/core/constant/app_sizes.dart';
+import 'package:smartpal/core/widgets/custom_button.dart';
+import 'package:smartpal/core/widgets/custom_text_widget.dart';
+import 'package:smartpal/features/auth/models/user_model.dart';
+import 'package:smartpal/features/auth/presentation/pages/login.dart';
+import 'package:smartpal/features/auth/presentation/widgets/input_field.dart';
+import 'package:smartpal/features/auth/provider/auth_provider.dart';
+import 'package:smartpal/features/auth/provider/user_information_provider.dart';
+import 'package:smartpal/widgets_tree.dart';
+
+class UserInformation extends ConsumerStatefulWidget {
+  const UserInformation({super.key});
+
+  @override
+  ConsumerState<UserInformation> createState() => _UserInformationState();
+}
+
+class _UserInformationState extends ConsumerState<UserInformation> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _ageController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _ageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final auth = ref.watch(authRepositoryProvider);
+    final userEmail = ref.watch(userEmailProvider);
+    final userInfo = ref.watch(userInformationProvider);
+
+    final authUser = auth.currentUser;
+    if (authUser == null) return Login();
+    final userId = authUser.uid;
+    String uid = userId.toString();
+    if (userEmail == null) return Login();
+    String email = userEmail.toString();
+
+    //handle storing user information in firestore
+    void storeUserInformation({
+      required String uid,
+      required String name,
+      required String age,
+      required String email,
+    }) async {
+      final user = UserModel(uid: uid, name: name, age: age, email: email);
+      await userInfo.addUserInformation(user);
+
+      if (!context.mounted) return;
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => WidgetsTree()),
+      );
+    }
+
+    void validateAndSubmit() {
+      final name = _nameController.text.trim();
+      final age = _ageController.text.trim();
+
+      if (name.isEmpty || age.isEmpty) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text("All fields are required")));
+        return;
+      }
+
+      storeUserInformation(uid: uid, name: name, age: age, email: email);
+    }
+
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomTextWidget(
+                  textValue: "User Information",
+                  size: AppSizes.fontLarge,
+                  colorValue: AppColor.blackText,
+                  fontWeight: FontWeight.w600,
+                ),
+                InputField(
+                  inputController: _nameController,
+                  hintText: 'Username',
+                  iconData: Icons.person_rounded,
+                ),
+                InputField(
+                  inputController: _ageController,
+                  hintText: 'Age',
+                  iconData: Icons.numbers,
+                ),
+                CustomButton(
+                  btnLabel: 'SIGN UP',
+                  onPressed: () => validateAndSubmit(),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
