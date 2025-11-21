@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "931903981242",
+    "project_id": "smartpal-a0f10",
+    "storage_bucket": "smartpal-a0f10.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931903981242:android:9944106ddfcb41f9e02483",
+        "android_client_info": {
+          "package_name": "com.example.smartpal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXgPraDZwdXfj4caZW_QtqdZHdxvCEV4s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
